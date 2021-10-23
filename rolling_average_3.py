@@ -7,11 +7,13 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 tList = []
+# to run this code effectively, my_path must be changed to wherever the data is on your computer
+my_path="C:/Users/r020v/PycharmProjects/pythonProject/data/"
 colNames = ["DSPIC96","INDPRO","PAYEMS","RRSFS","HOUST","ALTSALES","UNRATE","SAHMREALTIME", "AWHAE", "BUSINV", "UMCSENT", "RECPROUSM156N","ANXAVS_NEWORDER","ICSA", "DCOILWTICO", "PCEC96", "W875RX1"]
 # Storing data in Lists
 skiplist = list(range(0, 10))
-for i in os.listdir("C:/Users/r020v/OneDrive/Desktop/Stats Econ Project files/data"):
-    fPath = "C:/Users/r020v/OneDrive/Desktop/Stats Econ Project files/data/" + i
+for i in os.listdir(my_path):
+    fPath = my_path + i
     tList.append(pd.read_excel(fPath, skiprows=skiplist))
 df = tList[3]
 df_1 = df[colNames[3]]

@@ -8,10 +8,12 @@ from scipy import stats
 #Gives a table of each individual data set compared with other data sets to find the highest r-values
 tList = []
 # Storing data in Lists
+# to run this code effectively, my_path must be changed to wherever the data is on your computer
+my_path="C:/Users/r020v/PycharmProjects/pythonProject/data/"
 skiplist = list(range(0, 10))
 numFiles=0
-for i in os.listdir("C:/Users/r020v/OneDrive/Desktop/Stats Econ Project files/data"):
-    fPath = "C:/Users/r020v/OneDrive/Desktop/Stats Econ Project files/data/" + i
+for i in os.listdir(my_path):
+    fPath = my_path + i
     tList.append(pd.read_excel(fPath, skiprows=skiplist))
     numFiles=numFiles+1
 
